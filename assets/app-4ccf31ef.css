@@ -11115,11 +11115,13 @@ body::after {
 
 .ambassador-person-role {
   font-size: 20px;
+  font-weight: 400;
 }
 
 .ambassador-person-sity {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
 }
 
 .ambassador-person-first-card-down {
@@ -11154,6 +11156,7 @@ body::after {
 
 .ambassador-person-info-down h3 {
   font-size: 50px;
+  font-weight: 300;
 }
 
 .ambassador-person-info-down p {
@@ -11161,6 +11164,7 @@ body::after {
   color: rgba(255, 255, 255, 0.5);
   max-width: 700px;
   font-weight: 300;
+  line-height: 24px;
 }
 
 
@@ -11215,4 +11219,52 @@ body::after {
   line-height: 20px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Секция "Ключевые внедрения на Evolution CMS" */
+
+.projects-section {
+  border: 1px solid red;
+  background-color: #fff;
+  color: #141723;
+  padding: 90px 0;
+}
+
+.projects-content h2 {
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: 54px;
+}
+
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-left-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.project-left-info p {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(20, 23, 35, 0.7);
+}
+
+.project-left-info h3 {
+  font-size: 26px;
+  font-weight: 500;
+ line-height: 34px;
 }
