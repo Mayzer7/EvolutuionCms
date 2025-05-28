@@ -89,6 +89,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 ul li {
   list-style: none;
 }
@@ -3531,7 +3532,7 @@ h6 {
 .hero__content__ambassadors {
   position: relative;
   color: #fff;
-  padding-top: 9rem;
+
 }
 
 
@@ -10973,12 +10974,13 @@ body::after {
 /* Страница Амбассадоры */
 
 .ambassadors__content {
-    padding-bottom: 160px;
+    padding-bottom: 140px;
 }
 
 .ambassadors__header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-top: 40px;
 }
 
@@ -10989,6 +10991,7 @@ body::after {
 }
 
 .ambassadors__header__description {
+  margin-top: 10px;
     font-size: 20px;
     max-width: 520px;
     width: 100%;
@@ -10996,9 +10999,13 @@ body::after {
 
 .ambassadors__cards {
     margin-top: 50px;
-    display: flex;
-    gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
 }
+
+
 
 .ambassador__img img {
     max-width: 408px;
@@ -11027,10 +11034,85 @@ body::after {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* Адаптив Амбассадоры */
+
+@media (max-width: 1200px) {
+  .ambassadors__header__description {
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 384px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .ambassador-name p {
+    font-size: 22px;
+  }
+
+  .ambassador__role p {
+    font-size: 14px;
+  }
+
+  .ambassador__city p {
+    font-size: 12px;
+  }
+
+  .ambassadors__header__title {
+    font-size: 50px;
+  }
+
+  .ambassadors__header__description {
+    margin-top: 10px;
+    font-size: 16px;
+    max-width: 384px;
+    width: 100%;
+  }
+
+  .ambassadors__cards {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ambassadors__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 835px) {
+  .ambassadors__header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ambassadors__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
 /* Страница Амбассадор */
+
+.article__ambassadors {
+    transform: translateX(-20px);
+}
+
+.breadcrumb-ambassadors {
+  color: rgba(255, 255, 255, 0.4);
+}
 
 .ambassador-person-content {
   margin-top: 46px;
@@ -11038,17 +11120,20 @@ body::after {
 
 .ambassador-person-info-up {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   height: auto;
-  flex-wrap: wrap;
+
 }
 
 .ambassador-person-first-card,
 .ambassador-person-second-card {
   flex: 1 1 300px; 
   max-width: 630px;
+  
   height: auto;
-  min-width: 0;
+  min-width: 340px;
+  min-height: 332px;
 }
 
 .ambassador-person-first-card {
@@ -11106,9 +11191,14 @@ body::after {
   gap: 12px;
 }
 
-.ambassador-person-contact-info p {
+.ambassador-person-contact-info a {
   font-size: 18px;
   font-weight: 300;
+  transition: color 0.3s ease-in-out;
+}
+
+.ambassador-person-contact-info a:hover {
+  color: #009688;
 }
 
 
@@ -11140,6 +11230,8 @@ body::after {
   font-weight: 300;
   line-height: 24px;
 }
+
+
 
 /* Адаптив верхней части */
 
@@ -11178,6 +11270,45 @@ body::after {
     font-size: 16px;
   }
 }
+
+@media (max-width: 900px) {
+  .ambassador-person-name {
+    font-size: 40px;
+  }
+
+  .ambassador-person-role {
+    font-size: 16px;
+  }
+
+  .ambassador-person-sity {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 769px) {
+  .article__ambassadors {
+    transform: translateX(0px);
+}
+}
+
+@media (max-width: 769px) {
+  [class*=__container] {
+    padding: 0px 10px;
+  }
+
+ 
+
+  .ambassador-person-first-card, 
+  .ambassador-person-second-card {
+    max-width: 100%;
+  }
+
+  .ambassador-person-info-down {
+    padding: 32px 15px;
+  }
+
+}
+
 
 /* Секиця "Экспертиза и вклад" */
 
@@ -11264,6 +11395,29 @@ body::after {
   }
 }
 
+@media (max-width: 830px) {
+  .expertise-title {
+    font-size: 16px;
+  }
+
+  .expertise-text {
+    font-size: 12px;
+  }
+
+  .expertise-section h2 {
+    margin-bottom: 26px;
+  }
+
+  .expertise-card {
+    padding: 15px 20px;
+  }
+
+  .expertise-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
 
 /* Секция "Ключевые внедрения на Evolution CMS" */
 
@@ -11307,6 +11461,7 @@ body::after {
   gap: 14px;
   max-width: 800px;
   width: 100%;
+  padding-right: 20px;
 }
 
 .project-left-info p {
@@ -11319,6 +11474,16 @@ body::after {
   font-size: 26px;
   font-weight: 500;
   line-height: 34px;
+}
+
+.project-img img {
+  min-width: 299px;
+  min-height: 205px;
+
+  max-width: 299px;
+  max-height: 205px;
+  width: 100%;
+  height: 100%;
 }
 
 /* Адаптив "Ключевые внедрения на Evolution CMS" */
@@ -11338,6 +11503,42 @@ body::after {
   }
 }
 
+@media (max-width: 860px) {
+  .projects-content h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 769px) {
+  .project-info {
+    flex-direction: column;
+  }
+
+  .project-img img {
+    max-width: 355px;
+    max-height: 243px;
+  }
+
+  .project-left-info h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .project-left-info p {
+    font-size: 14px;
+  }
+
+  .projects-content h2 {
+    font-size: 32px;
+    margin-bottom: 26px;
+  }
+
+  .projects-section {
+    padding: 80px 0px;
+  }
+
+}
+
 
 /* Секиця "Как стать амбассадором" */
 
@@ -11354,9 +11555,14 @@ body::after {
   background-position: center;
 }
 
+.get-contact-middle {
+  background-position: center -100px;
+}
+
 .get-contact-desc {
   max-width: 521px;
   width: 100%;
+  padding-right: 20px;
 }
 
 
@@ -11373,5 +11579,46 @@ body::after {
 
   .get-description {
     margin-bottom: 0px;
+  }
+
+  .actions__join {
+    margin-inline: 0px;
+  }
+
+  .actions__title,
+  .actions__description,
+  .actions__footer {
+    padding-inline: 0px;
+  }
+}
+
+
+
+
+/* Уменьшаем шрифты все */
+
+@media (max-width: 830px) {
+  .ambassador-person-name {
+    font-size: 32px;
+  }
+
+  .ambassador-person-contact-info a {
+    font-size: 12px;
+  }
+
+  .ambassador-person-info-down h3 {
+    font-size: 32px;
+  }
+
+  .ambassador-person-info-down p {
+    font-size: 12px;
+  }
+
+  .expertise-section h2 {
+    font-size: 32px;
+  }
+
+  .ambassador-person-info-down p {
+    line-height: 20px;
   }
 }
