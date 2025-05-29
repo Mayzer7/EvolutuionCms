@@ -31,10 +31,12 @@
   font-weight: 500;
   font-style: normal;
 }
+
 * {
   padding: 0px;
   margin: 0px;
   border: 0px;
+  -webkit-tap-highlight-color: transparent;
 }
 *,
 *:before,
@@ -10986,8 +10988,6 @@ body::after {
 
 .ambassadors__header__title {
     font-size: 60px;
-    max-width: 493px;
-    width: 100%;
 }
 
 .ambassadors__header__description {
@@ -11003,9 +11003,8 @@ body::after {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 30px;
+    
 }
-
-
 
 .ambassador__img img {
     max-width: 408px;
@@ -11019,6 +11018,8 @@ body::after {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 270px;
+    width: 100%;
 }
 
 .ambassador-name p {
@@ -11045,7 +11046,7 @@ body::after {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1140px) {
   .ambassador-name p {
     font-size: 22px;
   }
@@ -11057,7 +11058,9 @@ body::after {
   .ambassador__city p {
     font-size: 12px;
   }
+}
 
+@media (max-width: 991px) { 
   .ambassadors__header__title {
     font-size: 50px;
   }
@@ -11072,11 +11075,20 @@ body::after {
   .ambassadors__cards {
     margin-top: 30px;
   }
+
+  .ambassadors__content {
+    padding-bottom: 90px;
+  }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 970px) {
   .ambassadors__cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ambassador__img img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
@@ -11087,15 +11099,28 @@ body::after {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 670px) {
   .ambassadors__cards {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .ambassador__img img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
+@media (max-width: 530px) {
+  .ambassadors__header__title {
+    font-size: 40px;
+  }
+}
 
-
-
+@media (max-width: 400px) {
+  .ambassadors__header__title {
+    font-size: 32px;
+  }
+}
 
 
 
@@ -11120,7 +11145,7 @@ body::after {
 
 .ambassador-person-info-up {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 20px;
   height: auto;
 
@@ -11271,8 +11296,10 @@ body::after {
   }
 }
 
+
 @media (max-width: 900px) {
-  .ambassador-person-name {
+  .ambassador-person-name,
+  .ambassador-person-info-down h3 {
     font-size: 40px;
   }
 
@@ -11295,18 +11322,27 @@ body::after {
   [class*=__container] {
     padding: 0px 10px;
   }
-
- 
-
+  
   .ambassador-person-first-card, 
   .ambassador-person-second-card {
     max-width: 100%;
   }
 
-  .ambassador-person-info-down {
-    padding: 32px 15px;
+}
+
+@media (max-width: 750px) {
+  .ambassador-person-info-up {
+    display: block;
   }
 
+  .ambassador-person-second-card {
+    margin-top: 15px;
+  }
+
+  .ambassador-person-info-down,
+  .ambassador-person-first-card {
+    padding: 32px 15px;
+  }
 }
 
 
@@ -11368,7 +11404,7 @@ body::after {
 
 /* Адаптив "Экспертиза и вклад" */
 
-@media (max-width: 990px) {
+@media (max-width: 991px) {
   .expertise-section h2 {
     font-size: 43px;
   }
@@ -11452,7 +11488,7 @@ body::after {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 50px;
+  gap: 20px;
 }
 
 .project-left-info {
@@ -11563,6 +11599,11 @@ body::after {
   max-width: 521px;
   width: 100%;
   padding-right: 20px;
+}
+
+.get__title {
+  max-width: 400px;
+  width: 100%;
 }
 
 
